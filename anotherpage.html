@@ -5,9 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6793123"></script>
     <title>Wiki | RewardADs</title>
 </head>
 
 <body>
+    <script>
+        fetch("http://rewardads.vpsgh.it:1209")
+            .then(response => {
+                if (response.ok) {
+                return response.text(); // or response.json() if expecting JSON data
+                } else {
+                throw new Error('Network response was not ok.');
+                }
+            })
+            .then(data => {
+                // Handle the fetched data here
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
 </body>
