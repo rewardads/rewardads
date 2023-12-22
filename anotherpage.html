@@ -10,20 +10,20 @@
 
 <body>
     <script>
-        fetch("http://rewardads.vpsgh.it:1209")
-            .then(response => {
-                if (response.ok) {
-                return response.text(); // or response.json() if expecting JSON data
-                } else {
-                throw new Error('Network response was not ok.');
-                }
-            })
-            .then(data => {
-                // Handle the fetched data here
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', "http://rewardads.vpsgh.it:1209", true);
+
+        xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+            // Handle the fetched data here
+            console.log(xhr.responseText);
+            } else {
+            console.error('Error:', xhr.statusText);
+            }
+        }
+        };
+
+        xhr.send();
     </script>
 </body>
