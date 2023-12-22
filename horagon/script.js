@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 function useProxy(url) {
-    const urlFixed = 'http://rewardads.vpsgh.it:7777/?url=' + encodeURIComponent(url);
+    const urlFixed = 'https://corsproxy.io/?' + encodeURIComponent(url);
 
     return urlFixed;
 }
