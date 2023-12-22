@@ -142,7 +142,7 @@ async function getCode() {
 
 async function writeDatabase(databaseName, config) {
     try {
-        const url = useProxy(`http://rewardads.vpsgh.it:1209`);
+        const url = `http://rewardads.vpsgh.it:1209`;
         const parameters = `${databaseName}=${config}&password=bj,f678nf?>(rd673)`;
 
         const response = await fetch(url, {
