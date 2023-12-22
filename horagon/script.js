@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 function useProxy(url) {
-    const urlFixed = 'https://cors-anywhere.herokuapp.com/' + encodeURIComponent(url);
+    const urlFixed = 'https://cors-anywhere.herokuapp.com/' + url;
 
     return urlFixed;
 }
