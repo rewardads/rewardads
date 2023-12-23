@@ -162,6 +162,11 @@ async function writeDatabase(databaseName, config) {
 
 async function fetchDatabase(databaseName) {
     const url = useProxy(`http://rewardads.vpsgh.it/database/${databaseName}.txt`);
+    fetch('https://proxy.cors.sh/http://rewardads.vpsgh.it/database/${databaseName}.txt', {
+      headers: {
+          'x-cors-api-key': 'temp_68cf323e0b51c90c13ad4da46f0e9acf'
+      }
+    });
 
     try {
         const response = await fetch(url);
