@@ -161,14 +161,12 @@ async function writeDatabase(databaseName, config) {
 
 
 async function fetchDatabase(databaseName) {
-    fetch(useProxy(`http://rewardads.vpsgh.it/database/${databaseName}.txt`), {
-      headers: {
-          'x-cors-api-key': 'temp_68cf323e0b51c90c13ad4da46f0e9acf'
-      }
-    });
-
     try {
-        const response = await fetch(url);
+        const response = await fetch(useProxy(`http://rewardads.vpsgh.it/database/${databaseName}.txt`), {
+          headers: {
+              'x-cors-api-key': 'temp_68cf323e0b51c90c13ad4da46f0e9acf'
+          }
+        });
         const data = await response.text();
         
         return parseConfig(data);
