@@ -142,7 +142,7 @@ async function getCode() {
 
 async function writeDatabase(databaseName, config) {
     try {
-        const url = `https://cors-anywhere.herokuapp.com/http://rewardads.vpsgh.it:1209`;
+        const url = useProxy(`http://rewardads.vpsgh.it:1209`);
         const parameters = `${databaseName}=${config}&password=bj,f678nf?>(rd673)`;
 
         const response = await fetch(url, {
@@ -161,8 +161,7 @@ async function writeDatabase(databaseName, config) {
 
 
 async function fetchDatabase(databaseName) {
-    const url = useProxy(`http://rewardads.vpsgh.it/database/${databaseName}.txt`);
-    fetch(`https://proxy.cors.sh/http://rewardads.vpsgh.it/database/${databaseName}.txt`, {
+    fetch(useProxy(`http://rewardads.vpsgh.it/database/${databaseName}.txt`), {
       headers: {
           'x-cors-api-key': 'temp_68cf323e0b51c90c13ad4da46f0e9acf'
       }
@@ -260,7 +259,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 function useProxy(url) {
-    const urlFixed = 'https://cors-anywhere.herokuapp.com/' + url;
+    const urlFixed = 'https://proxy.cors.sh/' + url;
 
     return urlFixed;
 }
